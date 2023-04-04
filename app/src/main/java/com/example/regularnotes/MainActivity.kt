@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.regularnotes.databinding.ActivityMainBinding
-import com.example.regularnotes.room.NoteInputActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         mViewModel = ViewModelProvider(this)[ViewModel::class.java]
 
-        val notesAdapter = NotesRowAdapter()
+        val notesAdapter = NotesRowAdapter(this)
 
         binding.rvShowNotes.adapter = notesAdapter
         binding.rvShowNotes.layoutManager = LinearLayoutManager(this)

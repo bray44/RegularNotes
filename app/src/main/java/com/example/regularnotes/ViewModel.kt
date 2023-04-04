@@ -1,6 +1,7 @@
 package com.example.regularnotes
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
@@ -23,6 +24,19 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     fun addNotes(title: String, content: String) {
         viewModelScope.launch(Dispatchers.IO) {
             db.addNotes(Notes(title = title, content = content))
+        }
+    }
+
+    fun deleteNotes(id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            db.deleteNotes(id)
+        }
+    }
+
+    fun updateNotes(id: Int, title: String, content: String) {
+        Log.d("TAG", "viewmodel updatenotes tertekan $id")
+        viewModelScope.launch(Dispatchers.IO) {
+            db.updateNotes(id, title, content)
         }
     }
 

@@ -1,12 +1,9 @@
-package com.example.regularnotes.room
+package com.example.regularnotes
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import com.example.regularnotes.MainActivity
-import com.example.regularnotes.R
-import com.example.regularnotes.ViewModel
 import com.example.regularnotes.databinding.ActivityNoteInputBinding
 
 class NoteInputActivity : AppCompatActivity() {
