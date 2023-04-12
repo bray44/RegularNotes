@@ -34,7 +34,6 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun updateNotes(id: Int, title: String, content: String) {
-        Log.d("TAG", "viewmodel updatenotes tertekan $id")
         viewModelScope.launch(Dispatchers.IO) {
             db.updateNotes(id, title, content)
         }

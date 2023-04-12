@@ -3,12 +3,10 @@ package com.example.regularnotes
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.example.regularnotes.databinding.ActivityEditRowBinding
 
-class EditRowActivity : AppCompatActivity() {
+class EditNotesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditRowBinding
     private lateinit var mViewModel: ViewModel

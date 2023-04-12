@@ -5,7 +5,7 @@
     android:padding="5dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditRowActivity">
+    tools:context=".EditNotesActivity">
 
     <EditText
         android:id="@+id/etNoteTitle"

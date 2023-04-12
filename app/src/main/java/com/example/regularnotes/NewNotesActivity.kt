@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.regularnotes.databinding.ActivityNoteInputBinding
 
-class NoteInputActivity : AppCompatActivity() {
+class NewNotesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNoteInputBinding
     private lateinit var mViewModel: ViewModel

@@ -12,10 +12,10 @@
         android:theme="@style/Theme.RegularNotes"
         tools:targetApi="31">
         <activity
-            android:name=".EditRowActivity"
+            android:name=".EditNotesActivity"
             android:exported="false" />
         <activity
-            android:name=".NoteInputActivity"
+            android:name=".NewNotesActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

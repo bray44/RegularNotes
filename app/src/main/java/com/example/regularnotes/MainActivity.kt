@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity(), OnClickInterface {
         }
 
         binding.btnAddNotes.setOnClickListener {
-            startActivity(Intent(this, NoteInputActivity::class.java))
+            startActivity(Intent(this, NewNotesActivity::class.java))
         }
 
 
     }
 
     override fun createIntent(): Intent {
-        return Intent(this, EditRowActivity::class.java)
+        return Intent(this, EditNotesActivity::class.java)
     }
 
     override fun goToActivity(intent: Intent) {
