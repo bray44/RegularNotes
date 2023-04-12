@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.regularnotes.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnClickInterface {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var mViewModel: ViewModel
@@ -32,5 +32,13 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun createIntent(): Intent {
+        return Intent(this, EditRowActivity::class.java)
+    }
+
+    override fun goToActivity(intent: Intent) {
+        startActivity(intent)
     }
 }

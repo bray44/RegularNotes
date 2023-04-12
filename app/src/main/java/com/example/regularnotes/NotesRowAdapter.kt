@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.regularnotes.room.Notes
 import kotlinx.coroutines.NonDisposableHandle.parent
 
-class NotesRowAdapter(private val context: Context): RecyclerView.Adapter<NotesRowAdapter.NotesRowViewHolder>() {
+class NotesRowAdapter(private val listener: OnClickInterface): RecyclerView.Adapter<NotesRowAdapter.NotesRowViewHolder>() {
 
     private var rows = emptyList<Notes>()
 
@@ -36,13 +36,13 @@ class NotesRowAdapter(private val context: Context): RecyclerView.Adapter<NotesR
     override fun onBindViewHolder(holder: NotesRowViewHolder, position: Int) {
         holder.tvNoteTitle.text = rows[position].title
 
-        val intent = Intent(this.context, EditRowActivity::class.java)
+        val intent = listener.createIntent()
         intent.putExtra("ROW_ID", rows[position].id)
         intent.putExtra("ROW_TITLE", rows[position].title)
         intent.putExtra("ROW_CONTENT", rows[position].content)
 
         holder.clNoteRow.setOnClickListener {
-            context.startActivity(intent)
+            listener.goToActivity(intent)
         }
     }
 
