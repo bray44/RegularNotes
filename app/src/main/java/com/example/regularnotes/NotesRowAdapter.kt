@@ -22,6 +22,7 @@ class NotesRowAdapter(private val listener: OnClickInterface): RecyclerView.Adap
     inner class NotesRowViewHolder(view: View): RecyclerView.ViewHolder(view) {
         var clNoteRow = view.findViewById<ConstraintLayout>(R.id.clNoteRow)
         var tvNoteTitle = view.findViewById<TextView>(R.id.tvNoteTitle)
+        val tvNoteContent = view.findViewById<TextView>(R.id.tvNoteContent)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesRowViewHolder {
@@ -35,6 +36,7 @@ class NotesRowAdapter(private val listener: OnClickInterface): RecyclerView.Adap
 
     override fun onBindViewHolder(holder: NotesRowViewHolder, position: Int) {
         holder.tvNoteTitle.text = rows[position].title
+        holder.tvNoteContent.text = rows[position].content
 
         val intent = listener.createIntent()
         intent.putExtra("ROW_ID", rows[position].id)
