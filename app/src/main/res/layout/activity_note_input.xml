@@ -10,24 +10,34 @@
     <EditText
         android:id="@+id/etNoteTitle"
         android:layout_width="0dp"
+        android:layout_marginHorizontal="5dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="@string/title"
+        android:textSize="24sp"
+        android:background="@drawable/notes_background"
+        android:textColorHint="@color/light_grey"
         android:inputType="textPersonName"
         android:textColor="@color/light_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"
+        />
 
     <EditText
         android:id="@+id/etNoteContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/notes_background"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/notes"
         android:inputType="textMultiLine"
         android:textColor="@color/light_grey"
+        android:textColorHint="@color/light_grey"
         app:layout_constraintBottom_toTopOf="@+id/btnSaveNote"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,4 +53,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/check_button" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

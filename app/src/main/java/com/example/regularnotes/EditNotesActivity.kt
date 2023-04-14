@@ -39,6 +39,11 @@ class EditNotesActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
 
     }
 }
