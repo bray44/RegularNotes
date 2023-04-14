@@ -15,7 +15,7 @@ interface NotesDao {
     @Query ("UPDATE notes SET title = :title, content = :content WHERE id = :id")
     suspend fun updateNotes(id: Int, title: String, content: String)
 
-    @Query("SELECT * FROM notes")
+    @Query("SELECT * FROM notes ORDER BY id DESC")
     fun showAllNotes(): LiveData<List<Notes>>
 
 }
