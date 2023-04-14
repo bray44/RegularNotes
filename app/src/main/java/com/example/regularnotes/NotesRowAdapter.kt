@@ -3,8 +3,11 @@ package com.example.regularnotes
 import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.Intent
+import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.INVISIBLE
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -37,6 +40,10 @@ class NotesRowAdapter(private val listener: OnClickInterface): RecyclerView.Adap
     override fun onBindViewHolder(holder: NotesRowViewHolder, position: Int) {
         holder.tvNoteTitle.text = rows[position].title
         holder.tvNoteContent.text = rows[position].content
+
+        if (holder.tvNoteTitle.text == "") {
+            holder.tvNoteTitle.visibility = GONE
+        }
 
         val intent = listener.createIntent()
         intent.putExtra("ROW_ID", rows[position].id)
